@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Hookshot : MonoBehaviour
 {
-
     public delegate void Callback();
 
     public enum State
@@ -14,15 +13,29 @@ public class Hookshot : MonoBehaviour
         Extending,
         Retracting
     }
+    [Serializable]
+    public class StateConfig
+    {
+        public float speed = 0;
+        public float pauseDuration = 0;
+        public Easing.Method easingMethod;
+        public Sprite hookSprite = null;
+    }
+
     [Header("Config")]
     public float minRange = 10;
     public float maxRange = 500;
     public float castWidth = 0;
-    public float extensionSpeed = 1.0f;
-    public float retractionSpeed = 1.0f;
+    public Hookable.Mode defaultMode = Hookable.Mode.None;
+
+    public StateConfig extensionConfig = new StateConfig();
+    public StateConfig retractionConfig = new StateConfig();
+    public StateConfig hookConfig = new StateConfig();
+    public StateConfig pullConfig = new StateConfig();
+
     public bool fireWhenNoTarget = true;
-    public LayerMask hookMask = new LayerMask();
-    public LayerMask hitMask = new LayerMask();
+    public LayerMask hitMask = new LayerMask(); //things we can hit
+    public LayerMask hookMask = new LayerMask(); //this we should hook by default
 
     [Header("Visualisation")]
     public Renderer chain = null;
@@ -32,12 +45,22 @@ public class Hookshot : MonoBehaviour
     public State state;
     public Transform owner;
 
-    Collider2D target = null;
+    Hookable.Mode currentMode = Hookable.Mode.None;
+    Hookable target = null;
+    Vector2 originPosition;
     Vector2 targetPosition;
-    float extensionTime = 0;
-    float retractionTime = 0;
 
     float tick = 0;
+
+    public void CancelTarget()
+    {
+        if (target)
+        {
+            currentMode = Hookable.Mode.None;
+            target.attachedHookshot = null;
+            target = null;
+        }
+    }
 
     public bool IsInUse()
     {
@@ -54,36 +77,35 @@ public class Hookshot : MonoBehaviour
         owner = _owner;
         _direction.Normalize();
 
-        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        currentMode = defaultMode;
 
-        Vector2 origin = this.transform.position;
+        originPosition = this.transform.position;
         Vector2 castOffset = _direction * castWidth;
-        RaycastHit2D hit = Physics2D.CircleCast(origin + castOffset, castWidth * 0.5f, _direction, maxRange, hookMask.value);
-        if (hit && hit.distance > minRange)
+        RaycastHit2D hit = Physics2D.CircleCast(originPosition, castWidth * 0.5f, _direction, maxRange, hitMask.value);
+        if(hit.distance <= minRange)
+        {
+            hit = Physics2D.Raycast(originPosition, _direction, maxRange, hitMask.value);
+        }
+        if (hit && hit.distance > 0)
         {
             targetPosition = hit.point;
-            target = hit.collider;
-        }
-        else
-        {
-            hit = Physics2D.CircleCast(origin + castOffset, castWidth * 0.5f, _direction, maxRange, hitMask.value);
-            if (hit && hit.distance > minRange)
+            target = hit.collider.GetComponent<Hookable>();
+            if (target && target.IsBlocking())
             {
-                targetPosition = hit.point;
+                currentMode = Hookable.Mode.None;
             }
             else
             {
-                targetPosition = origin + _direction * maxRange;
-                Vector2 start = origin + castOffset * 0.5f;
-                Debug.DrawLine(new Vector3(start.x, start.y), new Vector3(targetPosition.x, targetPosition.y), Color.blue, 0.5f);
+                if (((1 << hit.collider.gameObject.layer) & hookMask.value) > 0)
+                {
+                    currentMode = Hookable.Mode.Hook;
+                }
             }
         }
-
-        //calculate anim times
-        float distanceToTravel = (targetPosition - origin).magnitude;
-        extensionTime = distanceToTravel / extensionSpeed;
-        retractionTime = distanceToTravel / retractionSpeed;
+        else
+        {
+            targetPosition = originPosition + _direction * maxRange;
+        }
 
         if (fireWhenNoTarget || target != null)
         {
@@ -117,65 +139,107 @@ public class Hookshot : MonoBehaviour
         }
     }
 
+    float GetTForConfig(StateConfig config)
+    {
+        float distanceToTravel = (targetPosition - originPosition).magnitude;
+        float duration = distanceToTravel / config.speed;
+        float t = Easing.Ease(Mathf.Clamp(tick - config.pauseDuration, 0, duration), 0, 1, duration, config.easingMethod);
+        return t;
+    }
+
     private void Update()
     {
         if (IsInUse())
         {
-            Vector2 start = new Vector2();
-            Vector2 end = new Vector2();
+            Vector2 start = transform.position;
+            Vector2 end = targetPosition;
+
+            tick += Time.deltaTime;
 
             if (state == State.Extending)
             {
-                start = transform.position;
-                tick += Time.deltaTime;
-                if (tick > extensionTime)
+                float t = GetTForConfig(extensionConfig);
+                if (t >= 1)
                 {//begin retracting
-                    end = targetPosition;
                     SetState(State.Retracting);
                 }
                 else
                 {//move end to target
-                    float t = Easing.Ease(tick, 0, 1, extensionTime, Easing.Method.QuadOut);
-                    end = Vector2.Lerp(transform.position, targetPosition, t);
+                    end = Vector2.Lerp(originPosition, targetPosition, t);
                 }
             }
             else if (state == State.Retracting)
             {
-                end = targetPosition;
-                tick += Time.deltaTime;
-                if (tick > retractionTime)
+                Hookable.Mode mode = currentMode;
+                if(target)
                 {
-                    start = targetPosition;
-                    SetState(State.Idle);
-                }
-                else
-                {
-                    float t = 0;
-                    if (target)
-                    {//move start towards target
-                        t = Easing.Ease(tick, 0, 1, retractionTime, Easing.Method.QuadInOut);
-                        start = Vector2.Lerp(transform.position, targetPosition, t);
-                    }
-                    else
-                    {//return end to self
-                        t = Easing.Ease(tick, 1, 0, retractionTime, Easing.Method.QuadOut);
-                        start = transform.position;
-                        end = Vector2.Lerp(transform.position, targetPosition, t);
-                    }
+                    mode = target.mode;
                 }
 
-                //pull owner along with hook start
-                if (owner && target)
-                {
-                    //using physics body if present
-                    var body = owner.GetComponent<Rigidbody2D>();
-                    if (body)
+                if(mode == Hookable.Mode.Hook)
+                {//pull the owner to target
+                    float t = GetTForConfig(hookConfig);
+                    if (t >= 1)
                     {
-                        body.MovePosition(start);
+                        start = targetPosition;
+                        SetState(State.Idle);
                     }
                     else
                     {
+                        start = Vector2.Lerp(originPosition, targetPosition, t);
+                        start += new Vector2(0, 30) * (t < 0.5f ? t : 1.0f - t) * 0.5f;
+                    }
+                    if (owner)
+                    {
+                        //disable body during animation
+                        var body = owner.GetComponent<Rigidbody2D>();
+                        if (body)
+                        {
+                            body.simulated = t >= 1;
+                        }
                         owner.position = start;
+                    }
+                }
+                else if(mode == Hookable.Mode.Pull)
+                {//pull the target to the owner
+                    var targetToPull = target; //cache target as SetState sets to null
+                    float t = GetTForConfig(pullConfig);
+                    if (t >= 1)
+                    {
+                        end = originPosition;
+                        SetState(State.Idle);
+                    }
+                    else
+                    {
+                        end = Vector2.Lerp(targetPosition, originPosition, t);
+                        end += new Vector2(0, 30) * (t < 0.5f ? t : 1.0f - t) * 0.5f;
+                    }
+                    if (targetToPull)
+                    {
+                        if(targetToPull.IsBlocking())
+                        {
+                            CancelTarget();
+                        }
+                        //disable body during animation
+                        var body = targetToPull.GetComponent<Rigidbody2D>();
+                        if (body)
+                        {
+                            body.simulated = t >= 1;
+                        }
+                        targetToPull.transform.position = end;
+                    }
+                }
+                else
+                {//just retract the hookshot
+                    float t = GetTForConfig(retractionConfig);
+                    if (t >= 1)
+                    {
+                        start = targetPosition;
+                        SetState(State.Idle);
+                    }
+                    else
+                    {
+                        end = Vector2.Lerp(targetPosition, originPosition, t);
                     }
                 }
             }
@@ -184,6 +248,10 @@ public class Hookshot : MonoBehaviour
             Debug.DrawLine(new Vector3(start.x, start.y), new Vector3(end.x, end.y), Color.magenta);
 
             Vector2 dir = end - start;
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
             if (chain)
             {
                 const string textName = "_MainTex";

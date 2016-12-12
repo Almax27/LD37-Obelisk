@@ -373,7 +373,18 @@ public static class Easing
         
         return func ( t, b, c, d );
     }
-    
+    // ----------------------------------------------------------------------------
+    // Easing equation float.
+    //
+    // param t  Current tval to ease
+    // return   The correct value.
+    // ----------------------------------------------------------------------------
+    public static float Ease01(float t, Easing.Method method)
+    {
+        EaseingDelgate func = delgates[(int)method];
+        return func(t, 0, 1, 1);
+    }
+
     // ----------------------------------------------------------------------------
     // Easing equation Vector2.
     //

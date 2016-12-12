@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour {
     int levelIndex = -1;
     BaseLevel levelInstance = null;
 
+    [Header("GameState")]
+    
+
+    [Header("UI")]
+    public Yarn.Unity.DialogueRunner obeliskDialogueRunner = null;
+    public ObeliskDialogueUI obeliskDialogueUI = null;
+
     [Header("Music")]
     public AudioClip calmMusic = null;
     public AudioClip fightMusic = null;
@@ -28,9 +35,21 @@ public class GameManager : MonoBehaviour {
     {
         if(levelInstance)
         {
+            ShowDialogue(levelInstance.endDialogueNode, _levelIndex);       
+        }
+        else
+        {
+            LoadLevel(_levelIndex);
+        }
+    }
+
+    void LoadLevel(int _levelIndex)
+    {
+        if (levelInstance)
+        {
             Destroy(levelInstance.gameObject);
         }
-        if(_levelIndex >= 0 && _levelIndex < levels.Count)
+        if (_levelIndex >= 0 && _levelIndex < levels.Count)
         {
             var levelPrefab = levels[_levelIndex];
             levelInstance = Instantiate(levelPrefab.gameObject).GetComponent<BaseLevel>();
@@ -45,11 +64,11 @@ public class GameManager : MonoBehaviour {
 
             levelIndex = _levelIndex;
 
-            Debug.Log(string.Format("Transitioning to level {0}", _levelIndex));
+            Debug.Log(string.Format("Loading to level {0}", _levelIndex));
         }
         else
         {
-            Debug.LogError(string.Format("Failed to transition to level {0}", _levelIndex));
+            Debug.LogError(string.Format("Failed to load level {0}", _levelIndex));
         }
     }
 
@@ -88,6 +107,35 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void ShowDialogue(string startNode, int nextLevel)
+    {
+        if (obeliskDialogueRunner && obeliskDialogueUI)
+        {
+            obeliskDialogueUI.onCommand = (Yarn.Command command) =>
+            {
+                if(command.text == "nextlevel")
+                {
+                    LoadLevel(nextLevel);
+                }
+            };
+            obeliskDialogueUI.onStarted = () =>
+            {
+                if(playerInstance)
+                {
+                    playerInstance.lockInput = true;
+                }
+            };
+            obeliskDialogueUI.onComplete = () =>
+            {
+                if (playerInstance)
+                {
+                    playerInstance.lockInput = false;
+                }
+            };
+            obeliskDialogueRunner.StartDialogue(startNode);
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {
@@ -98,6 +146,9 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            TransitionToLevel(levelIndex + 1);
+        }
     }
 }
