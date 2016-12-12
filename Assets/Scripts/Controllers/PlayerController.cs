@@ -7,8 +7,16 @@ public class PlayerController : MonoBehaviour {
     public delegate void Callback();
     public Callback onObeliskTrigger;
 
+    public enum MoveAttackMode
+    {
+        MoveAndAttack,
+        MoveAfterHit,
+        MoveAfterAttack
+    }
+
     public bool lockInput = false;
     public float moveSpeed = 0;
+    public MoveAttackMode moveAttackMode = MoveAttackMode.MoveAfterHit;
     public Weapon weapon = null;
     public Hookshot hookshot = null;
     public Animator bodyAnimator = null;
@@ -17,7 +25,11 @@ public class PlayerController : MonoBehaviour {
 
     bool isMoving;
     int directionIndex = 0;
+    int hookshotDirectionIndex = 0;
+    int attackDirectionIndex = 0;
+
     bool isAttacking = false;
+    bool hasAttackHit = false;
     bool attackPending = false;
 
     int DirectionToIndex(Vector2 direction)
@@ -68,50 +80,11 @@ public class PlayerController : MonoBehaviour {
             lockInput = true;
         }
 
-        bool canMove = !lockInput && !isAttacking;
-        bool canAttack = !lockInput && !isAttacking;
-        bool canHook = !lockInput;
-        bool didMove = false;
-        bool startedAttack = false;
-        bool usedHookShot = false;
-        
-        if (canHook && hookshot)
-        {
-            if (Input.GetButtonDown("Fire2"))
-            {
-                var direction = transform.TransformDirection(0, -1, 0);
-                var screenPos = Camera.main.WorldToScreenPoint(transform.position);
-                direction = Input.mousePosition - screenPos;
-                if (hookshot.Fire(transform, direction))
-                {
-                    usedHookShot = true;
-                    directionIndex = DirectionToIndex(direction);
-                }
-            }
-            if(hookshot.IsInUse())
-            {
-                canMove = false;
-            }
-        }
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (canAttack)
-            {
-                isAttacking = true;
-                startedAttack = true;
-                attackPending = false;
-            }
-            else
-            {
-                attackPending = true;
-            }
-        }
-
+        //------------------------------------------------
+        //FACING
         Vector3 facing = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         if (facing.x != 0 || facing.y != 0)
         {
-            
             if (facing.magnitude > 1)
             {
                 facing.Normalize();
@@ -119,6 +92,61 @@ public class PlayerController : MonoBehaviour {
             directionIndex = DirectionToIndex(facing);
         }
 
+        //------------------------------------------------
+        //COMBAT
+        bool isUsingHookshot = false;
+        if (hookshot)
+        {
+            if (!lockInput && Input.GetButtonDown("Fire2"))
+            {
+                var direction = transform.TransformDirection(0, -1, 0);
+                var screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                direction = Input.mousePosition - screenPos;
+                if (hookshot.Fire(transform, direction))
+                {
+                    if (bodyAnimator)
+                    {
+                        CancelAttack();
+                        bodyAnimator.SetTrigger("OnHook");
+                    }
+                    directionIndex = hookshotDirectionIndex = DirectionToIndex(direction);
+                }
+            }
+            bodyAnimator.SetBool("IsHookRetracting", hookshot.state == Hookshot.State.Retracting);
+            isUsingHookshot = hookshot.IsInUse();
+        }
+
+        bool canAttack = !lockInput && !isAttacking;
+        if (!lockInput && Input.GetButtonDown("Fire1"))
+        {
+            if (canAttack)
+            {
+                StartAttack();
+            }
+            else
+            {
+                attackPending = true;
+            }
+        }
+        else if(canAttack && attackPending)
+        {
+            StartAttack();
+        }
+
+        //------------------------------------------------
+        //MOVEMENT
+        bool canMove = !lockInput && !isUsingHookshot;
+        if (canMove)
+        {
+            if (moveAttackMode == MoveAttackMode.MoveAfterHit && isAttacking && !hasAttackHit)
+            {
+                canMove = false;
+            }
+            else if (moveAttackMode == MoveAttackMode.MoveAfterAttack && isAttacking)
+            {
+                canMove = false;
+            }
+        }
         if (canMove)
         {
             var body = GetComponent<Rigidbody2D>();
@@ -126,33 +154,34 @@ public class PlayerController : MonoBehaviour {
             {
                 var deltaPos = new Vector2(facing.x, facing.y) * moveSpeed * Time.fixedDeltaTime;
                 body.MovePosition(body.position + deltaPos);
-                didMove = true;
+
+                if (!isMoving && !isAttacking)
+                {
+                    isMoving = true;
+                    if (bodyAnimator)
+                    {
+                        CancelAttack();
+                        bodyAnimator.SetTrigger("OnMove");
+                    }
+                }
+            }
+            else
+            {
+                isMoving = false;
             }
         }
+        else
+        {
+            isMoving = false;
+        }
 
-        bool canIdle = lockInput || (canMove && !didMove && !startedAttack && !usedHookShot);
         if (bodyAnimator)
         {
-            bodyAnimator.SetInteger("Direction", directionIndex);
-            if (!isMoving && didMove)
-            {
-                CancelAttack();
-                bodyAnimator.SetTrigger("OnMove");
-            }
-            if (startedAttack)
-            {
-                bodyAnimator.SetTrigger("OnAttack");
-            }
-            if (usedHookShot)
-            {
-                CancelAttack();
-                bodyAnimator.SetTrigger("OnHook");
-            }
-            bodyAnimator.SetBool("IsHookRetracting", hookshot && hookshot.state == Hookshot.State.Retracting);
+            bodyAnimator.SetInteger("Direction", isUsingHookshot ? hookshotDirectionIndex : directionIndex);
+
+            bool canIdle = lockInput || (!isMoving && !isAttacking && !isUsingHookshot);
             bodyAnimator.SetBool("CanIdle", canIdle);
         }
-
-        isMoving = didMove;
     }
 
     private void FixedUpdate()
@@ -162,7 +191,6 @@ public class PlayerController : MonoBehaviour {
         {
             body.velocity = Vector2.zero;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -185,25 +213,49 @@ public class PlayerController : MonoBehaviour {
         {
             DealDamage(col.gameObject);
         }
+        hasAttackHit = true;
     }
 
     private void OnAttackEnd()
     {
+        isAttacking = false;
         if (attackPending)
         {
-            attackPending = false;
-            isAttacking = true;
+            if(directionIndex == attackDirectionIndex)
+            {
+                isAttacking = true;
+                attackPending = false;
+            }
+            else
+            {
+                StartAttack();
+            }
         }
-        else
+        hasAttackHit = false;
+    }
+
+    private bool StartAttack()
+    {
+        if(!isAttacking)
         {
-            isAttacking = false;
+            isAttacking = true;
+            attackPending = false;
+            hasAttackHit = false;
+            attackDirectionIndex = directionIndex;
+            if (bodyAnimator)
+            {
+                bodyAnimator.SetTrigger("OnAttack");
+            }
+            return true;
         }
+        return false;
     }
 
     private void CancelAttack()
     {
         isAttacking = false;
         attackPending = false;
+        hasAttackHit = false;
     }
 
     private void DealDamage(GameObject obj)
