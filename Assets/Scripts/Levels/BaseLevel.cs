@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BaseLevel : MonoBehaviour {
 
+    [Header("Combat")]
     List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     public int enemiesRemaining = 0;
+
+    [Header("Dialogue")]
+    public string startDialogueNode;
+    public string endDialogueNode;
 
     public delegate void OnComplete();
     public OnComplete onComplete;

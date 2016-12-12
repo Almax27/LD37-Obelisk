@@ -9,11 +9,12 @@ public class SpawnPoint : MonoBehaviour {
     public bool waitForNull = true;
 
     GameObject lastSpawnedObject = null;
+    List<GameObject> liveObjects = new List<GameObject>();
     float delayTick = 0;
 
     public bool IsExhasted()
     {
-        return objectsToSpawn.Count <= 0 && lastSpawnedObject == null;
+        return objectsToSpawn.Count <= 0 && liveObjects.Count <= 0;
     }
 
     void SpawnNext()
@@ -21,10 +22,19 @@ public class SpawnPoint : MonoBehaviour {
         var obj = objectsToSpawn[0];
         objectsToSpawn.RemoveAt(0);
 
-        var instance = Instantiate(obj);
-        instance.transform.position = this.transform.position;
+        //random starting location
+        var spawnPosition = Vector2.zero;
+        var points = GetComponentsInChildren<Transform>();
+        if (points.Length > 0)
+        {
+            spawnPosition = points[Random.Range(0, points.Length - 1)].position;
+        }
+
+        var instance = Instantiate(obj, spawnPosition, Quaternion.identity);
+        instance.SendMessage("OnSpawn", transform, SendMessageOptions.DontRequireReceiver);
 
         lastSpawnedObject = instance;
+        liveObjects.Add(instance);
 
         delayTick = 0;
     }
@@ -47,5 +57,6 @@ public class SpawnPoint : MonoBehaviour {
                 SpawnNext();
             }
         }
-	}
+        liveObjects.RemoveAll(item => item == null);
+    }
 }
