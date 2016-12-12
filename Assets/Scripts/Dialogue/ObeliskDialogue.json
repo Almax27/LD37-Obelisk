@@ -12,10 +12,10 @@
 	{
 		"title": "obelisk_1_end",
 		"tags": "",
-		"body": "\nLevel 1 has ended\\nContinue?\n->I guess... \n    <<nextlevel>>\n->Wait!",
+		"body": "Level 1 has ended\n->I guess... boobie\n    <<nextlevel>>\n->Wait!",
 		"position": {
-			"x": 92,
-			"y": 332
+			"x": 93,
+			"y": 331
 		},
 		"colorID": 0
 	},

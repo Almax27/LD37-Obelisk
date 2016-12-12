@@ -95,7 +95,7 @@ public class Health : MonoBehaviour {
                 flashTick += Time.deltaTime;
             }
             float t = Mathf.Clamp01(flashTick / flashDuration);
-            var renderers = GetComponentsInChildren<Renderer>();
+            var renderers = GetComponentsInChildren<Renderer>(true);
             foreach (var renderer in renderers)
             {
                 renderer.material.color = Color.Lerp(flashColor, Color.white, t);
