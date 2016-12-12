@@ -28,9 +28,24 @@ public class SimpleAnimation : MonoBehaviour
 	    if (playFadeAnim)
         {
             fadeAnimTick += Time.deltaTime;
-            Color color = GetComponent<Renderer>().material.color;
-            color.a = fadeAnim.Evaluate(fadeAnimTick);
-            GetComponent<Renderer>().material.color = color;
+
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            if(spriteRenderer)
+            {
+                Color color = spriteRenderer.color;
+                color.a = fadeAnim.Evaluate(fadeAnimTick);
+                spriteRenderer.color = color;
+            }
+            else
+            {
+                Renderer renderer = GetComponent<Renderer>();
+                if (renderer)
+                {
+                    Color color = renderer.material.color;
+                    color.a = fadeAnim.Evaluate(fadeAnimTick);
+                    spriteRenderer.color = color;
+                }
+            }
         }
         if (playRotAnim)
         {
