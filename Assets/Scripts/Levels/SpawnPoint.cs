@@ -31,6 +31,7 @@ public class SpawnPoint : MonoBehaviour {
         }
 
         var instance = Instantiate(obj, spawnPosition, Quaternion.identity);
+        instance.transform.parent = this.transform;
         instance.SendMessage("OnSpawn", transform, SendMessageOptions.DontRequireReceiver);
 
         lastSpawnedObject = instance;

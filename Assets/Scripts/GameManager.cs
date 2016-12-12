@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
     int levelIndex = -1;
     BaseLevel levelInstance = null;
 
-    [Header("GameState")]
-    
+    [Header("References")]
+    public TheVoid theVoid = null;
 
     [Header("UI")]
     public Yarn.Unity.DialogueRunner obeliskDialogueRunner = null;
@@ -33,13 +33,21 @@ public class GameManager : MonoBehaviour {
 
     void TransitionToLevel(int _levelIndex)
     {
-        if(levelInstance)
+        if (levelIndex < 0)
         {
-            ShowDialogue(levelInstance.endDialogueNode, _levelIndex);       
+            LoadLevel(_levelIndex);
         }
         else
         {
-            LoadLevel(_levelIndex);
+            SetGameState(GameState.Calm);
+            theVoid.EnterTheVoid(() =>
+            {
+                if (levelInstance)
+                {
+                    levelInstance.gameObject.SetActive(false);
+                    ShowDialogue(levelInstance.endDialogueNode, _levelIndex);
+                }
+            });
         }
     }
 
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour {
         if (levelInstance)
         {
             Destroy(levelInstance.gameObject);
+            levelInstance = null;
         }
         if (_levelIndex >= 0 && _levelIndex < levels.Count)
         {
@@ -61,6 +70,8 @@ public class GameManager : MonoBehaviour {
             };
 
             SetGameState(GameState.Fighting);
+
+            theVoid.ExitTheVoid();
 
             levelIndex = _levelIndex;
 
@@ -77,10 +88,10 @@ public class GameManager : MonoBehaviour {
         switch(newState)
         {
             case GameState.Calm:
-                FAFAudio.Instance.PlayMusic(calmMusic);
+                FAFAudio.Instance.TryPlayMusic(calmMusic);
                 break;
             case GameState.Fighting:
-                FAFAudio.Instance.PlayMusic(fightMusic, 0.2f, 0.2f, true);
+                FAFAudio.Instance.TryPlayMusic(fightMusic, 0.2f, 0.2f, true);
                 break;
         }
         gameState = newState;

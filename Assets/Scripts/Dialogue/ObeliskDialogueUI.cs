@@ -117,7 +117,7 @@ public class ObeliskDialogueUI : Yarn.Unity.DialogueUIBehaviour
 			
 			
 		// Wait for any user input
-		while (Input.anyKeyDown == false) {
+		while (Input.GetButtonDown("Fire1") == false) {
 			yield return null;
 		}
 			
@@ -184,10 +184,16 @@ public class ObeliskDialogueUI : Yarn.Unity.DialogueUIBehaviour
 	public override IEnumerator DialogueStarted ()
 	{
 		Debug.Log ("Dialogue starting!");
-			
-		// Enable the dialogue controls.
-		if (dialogueContainer != null)
-			dialogueContainer.SetActive(true);
+
+        // Enable the dialogue controls.
+        if (dialogueContainer != null)
+        {
+            dialogueContainer.SetActive(true);
+            foreach(var g in dialogueContainer.GetComponentsInChildren<Graphic>())
+            {
+                g.FadeIn();
+            }
+        }
 
 		// Hide the game controls.
 		if (gameControlsContainer != null) {
@@ -204,9 +210,15 @@ public class ObeliskDialogueUI : Yarn.Unity.DialogueUIBehaviour
 	{
 		Debug.Log ("Complete!");
 
-		// Hide the dialogue interface.
-		if (dialogueContainer != null)
-			dialogueContainer.SetActive(false);
+        // Hide the dialogue interface.
+        if (dialogueContainer != null)
+        {
+            dialogueContainer.SetActive(false);
+            foreach (var g in dialogueContainer.GetComponentsInChildren<Graphic>())
+            {
+                g.FadeOut();
+            }
+        }
 
 		// Show the game controls.
 		if (gameControlsContainer != null) {
