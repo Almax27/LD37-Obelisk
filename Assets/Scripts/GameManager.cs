@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour {
     PlayerController playerInstance = null;
 
     public List<BaseLevel> levels = new List<BaseLevel>();
+    public int initialLevelIndex = 0;
     int levelIndex = -1;
     BaseLevel levelInstance = null;
 
     [Header("References")]
     public Obelisk obelisk = null;
     public TheVoid theVoid = null;
+    public GameObject credits = null;
 
     [Header("UI")]
     public Yarn.Unity.DialogueRunner obeliskDialogueRunner = null;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour {
     enum GameState
     {
         None,
+        Start,
         Fighting,
         Calm
     }
@@ -35,9 +38,9 @@ public class GameManager : MonoBehaviour {
 
     void TransitionToLevel(int _levelIndex)
     {
-        if (_levelIndex == 0)
+        if (_levelIndex == 0 || levelIndex == -1)
         {
-            ShowDialogue("start", 0);
+            ShowDialogue("start", _levelIndex);
         }
         else
         {
@@ -105,6 +108,7 @@ public class GameManager : MonoBehaviour {
         {
             playerInstance = Instantiate(player.gameObject).GetComponent<PlayerController>();
             playerInstance.transform.parent = this.transform;
+            playerInstance.lockInput = true;
 
             playerInstance.onObeliskTrigger = () =>
             {
@@ -161,12 +165,21 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        TransitionToLevel(0);
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if(gameState == GameState.None)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                credits.SetActive(false);
+                TransitionToLevel(initialLevelIndex);
+                gameState = GameState.Start;
+            }
+        }
         if(Input.GetKeyDown(KeyCode.N))
         {
             TransitionToLevel(levelIndex + 1);
