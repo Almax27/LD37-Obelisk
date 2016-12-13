@@ -12,17 +12,17 @@
 	{
 		"title": "obelisk_1_end",
 		"tags": "",
-		"body": "Level 1 has ended\n->I guess... boobie\n    <<nextlevel>>\n->Wait!",
+		"body": "Level 1 has ended \n->I guess... boobie \n    [[next_level]]\n->Wait",
 		"position": {
 			"x": 93,
-			"y": 331
+			"y": 326
 		},
 		"colorID": 0
 	},
 	{
 		"title": "obelisk_2_end",
 		"tags": "",
-		"body": "Level 2 has ended\n<<nextlevel>>",
+		"body": "Level 2 has ended [[next_level]]",
 		"position": {
 			"x": 333,
 			"y": 338
@@ -52,7 +52,7 @@
 	{
 		"title": "obelisk_3_end",
 		"tags": "",
-		"body": "Level 3 has ended\n<<nextlevel>>",
+		"body": "Level 3 has ended [[next_level]]",
 		"position": {
 			"x": 565,
 			"y": 336
@@ -82,7 +82,7 @@
 	{
 		"title": "obelisk_4_end",
 		"tags": "",
-		"body": "Level 4 has ended\n<<nextlevel>>",
+		"body": "Level 4 has ended [[next_level]]",
 		"position": {
 			"x": 794,
 			"y": 337
@@ -92,10 +92,50 @@
 	{
 		"title": "obelisk_5_end",
 		"tags": "",
-		"body": "Level 5 has ended\n<<nextlevel>>",
+		"body": "Level 5 has ended [[next_level]]",
 		"position": {
 			"x": 1043,
-			"y": 338
+			"y": 335
+		},
+		"colorID": 0
+	},
+	{
+		"title": "next_level",
+		"tags": "",
+		"body": "<<nextlevel>>",
+		"position": {
+			"x": 521,
+			"y": 613
+		},
+		"colorID": 0
+	},
+	{
+		"title": "death",
+		"tags": "",
+		"body": "Death [[accept|restart]]",
+		"position": {
+			"x": 694,
+			"y": 916
+		},
+		"colorID": 0
+	},
+	{
+		"title": "start",
+		"tags": "",
+		"body": "In the begining [[next_level]]",
+		"position": {
+			"x": 208,
+			"y": 917
+		},
+		"colorID": 0
+	},
+	{
+		"title": "restart",
+		"tags": "",
+		"body": "<<restart>>",
+		"position": {
+			"x": 998,
+			"y": 922
 		},
 		"colorID": 0
 	}

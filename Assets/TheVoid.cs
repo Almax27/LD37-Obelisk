@@ -39,7 +39,7 @@ public class TheVoid : MonoBehaviour {
 
     public void EnterTheVoid(Callback callback = null)
     {
-        if (state != State.FadingIn || state != State.Active)
+        if (state != State.FadingIn && state != State.Active)
         {
             darknessEaseIn.Reset();
             state = State.FadingIn;
@@ -55,7 +55,7 @@ public class TheVoid : MonoBehaviour {
 
     public void ExitTheVoid(Callback callback = null)
     {
-        if (state != State.FadingOut || state != State.Inactive)
+        if (state != State.FadingOut && state != State.Inactive)
         {
             darknessEaseOut.Reset();
             state = State.FadingOut;
@@ -69,7 +69,7 @@ public class TheVoid : MonoBehaviour {
 
     private void Start()
     {
-        ExitTheVoid();
+        EnterTheVoid();
     }
 
     // Update is called once per frame

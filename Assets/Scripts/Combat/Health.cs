@@ -14,6 +14,10 @@ public class Health : MonoBehaviour {
     public bool destroyOnDeath = false;
     public float deathKnockbackScale = 5.0f;
 
+    [Header("SpawnOnEvent")]
+    public GameObject[] spawnOnDamage = new GameObject[0];
+    public GameObject[] spawnOnDeath = new GameObject[0];
+
     [Header("Visualisation")]
     public Color flashColor = Color.white;
     public float flashDuration = 0.0f;
@@ -71,10 +75,8 @@ public class Health : MonoBehaviour {
             {//end of knockback
                 if (IsDead())
                 {
-                    if (current <= 0)
-                    {
-                        if (onDeath != null) { onDeath(lastDamagePacket); }
-                    }
+                    ProcessSpawns(spawnOnDeath);
+                    if (onDeath != null) { onDeath(lastDamagePacket); }
                     if (destroyOnDeath)
                     {
                         Destroy(gameObject);
@@ -126,5 +128,17 @@ public class Health : MonoBehaviour {
 
         flashTick = 0;
 
+        ProcessSpawns(spawnOnDamage);
+    }
+
+    void ProcessSpawns(GameObject[] spawns)
+    {
+        foreach(GameObject gobj in spawns)
+        {
+            if(gobj)
+            {
+                Instantiate(gobj, this.transform.position, Quaternion.identity);
+            }
+        }
     }
 }
