@@ -214,6 +214,7 @@ public class Hookshot : MonoBehaviour
                         end = Vector2.Lerp(targetPosition, originPosition, t);
                         end += new Vector2(0, 30) * (t < 0.5f ? t : 1.0f - t) * 0.5f;
                     }
+                    end += (targetPosition - originPosition).normalized * 5; //HACK: to avoid enemies passing through player
                     if (targetToPull)
                     {
                         if(targetToPull.IsBlocking())
