@@ -2,7 +2,7 @@
 	{
 		"title": "obelisk_1_end",
 		"tags": "",
-		"body": "Rest now.\nAs ages come and go\nYou will need your strength \n->I will rest \n    [[next_level]] \n->I'm not tired",
+		"body": "Rest now\nYou will need your strength \n->I will rest \n    [[next_level]] \n->I'm not tired",
 		"position": {
 			"x": 93,
 			"y": 326
@@ -12,10 +12,10 @@
 	{
 		"title": "obelisk_2_end",
 		"tags": "",
-		"body": "It is safe now, sleep.\nSleep for ten thousand dawns\n->What is this place?\n    A space between places\n    A time between time\n    Not what but why...\n    ->Why?\n        Sleep. [[next_level]]\n->I'm afraid \n    Nothing can harm you while we're together\n    Close your eyes and be at peace\n    ->Close eyes\n        [[next_level]]",
+		"body": "It is safe now, sleep\nSleep for ten thousand dawns\n->What is this place?\n    A space between places\n    A time between time\n    Not what but why...\n    ->Why?\n        Sleep [[next_level]]\n->I'm afraid \n    Nothing can harm you while we're together\n    Close your eyes and be at peace\n    ->Close eyes\n        [[next_level]]",
 		"position": {
-			"x": 328,
-			"y": 340
+			"x": 326,
+			"y": 338
 		},
 		"colorID": 0
 	},
@@ -34,7 +34,7 @@
 		"tags": "",
 		"body": "All is lost\nWe are alone\n->Who are you? \n    I am you\n    ->Who am I?\n        One who is chained to this room [[next_level]]\n->...",
 		"position": {
-			"x": 794,
+			"x": 792,
 			"y": 337
 		},
 		"colorID": 0
@@ -42,7 +42,7 @@
 	{
 		"title": "obelisk_5_end",
 		"tags": "",
-		"body": "Maybe now we can sleep\nPeace comes for all of us\nEventually\n->Sleep \n    [[next_level]]\n->Stay In The Void",
+		"body": "Maybe now we can sleep\nPeace comes for all of us\nEventually\n->Sleep \n    [[next_level]]\n->Stay in the Void",
 		"position": {
 			"x": 1041,
 			"y": 335
