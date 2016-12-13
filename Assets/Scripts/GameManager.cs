@@ -177,6 +177,14 @@ public class GameManager : MonoBehaviour {
                 Destroy(levelInstance.gameObject);
                 levelInstance = null;
             }
+
+            //cleanup any persisting enemies
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+
             SpawnPlayer();
 
             levelIndex = -1;
