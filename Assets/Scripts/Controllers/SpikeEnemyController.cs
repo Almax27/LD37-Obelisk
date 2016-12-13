@@ -84,11 +84,11 @@ public class SpikeEnemyController : MonoBehaviour {
         }
         else
         {
-            if(moveTarget)
+            if (moveTarget)
             {
                 var pos = Vector2.SmoothDamp(transform.position, moveTarget.position, ref moveVelocity, 0.2f, moveSpeed, Time.deltaTime);
-                var body = GetComponent<Rigidbody2D>();
-                if(body && body.simulated)
+                Rigidbody2D body = GetComponent<Rigidbody2D>();
+                if (body && body.simulated)
                 {
                     body.MovePosition(pos);
                 }
@@ -99,6 +99,7 @@ public class SpikeEnemyController : MonoBehaviour {
             }
             if (attackTick > nextAttackDelay)
             {
+                moveVelocity = Vector2.zero;
                 StartAttacking();
             }
         }
@@ -109,6 +110,15 @@ public class SpikeEnemyController : MonoBehaviour {
             bodyAnimator.SetInteger("Direction", directionIndex);
         }
 	}
+
+    private void FixedUpdate()
+    {
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        if(body)
+        {
+            body.velocity = Vector2.zero;
+        }
+    }
 
     void StartAttacking()
     {

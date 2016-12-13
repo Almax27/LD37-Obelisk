@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour {
             var body = GetComponent<Rigidbody2D>();
             if (body && (facing.x != 0 || facing.y != 0))
             {
-                var deltaPos = new Vector2(facing.x, facing.y) * moveSpeed * Time.fixedDeltaTime;
+                var deltaPos = new Vector2(facing.x, facing.y) * moveSpeed * Time.deltaTime;
                 body.MovePosition(body.position + deltaPos);
 
                 if (!isMoving && !isAttacking)
