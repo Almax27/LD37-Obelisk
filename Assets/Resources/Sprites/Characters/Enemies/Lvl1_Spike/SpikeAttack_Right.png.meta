@@ -78,7 +78,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-  spritePackingTag: Spike1
+  spritePackingTag: Enemy
   userData: 
   assetBundleName: 
   assetBundleVariant: 
