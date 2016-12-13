@@ -12,7 +12,7 @@
 	{
 		"title": "obelisk_1_end",
 		"tags": "",
-		"body": "Level 1 has ended \n->I guess... boobie \n    [[next_level]]\n->Wait",
+		"body": "Rest now. \n You will need your strength \n->I guess... \n    [[next_level]] \n->Wait!",
 		"position": {
 			"x": 93,
 			"y": 326
@@ -22,7 +22,7 @@
 	{
 		"title": "obelisk_2_end",
 		"tags": "",
-		"body": "Level 2 has ended [[next_level]]",
+		"body": "Sleep my child. \n Sleep for a long time \n->Long time? \n [[next_level]]\n->Wait!",
 		"position": {
 			"x": 333,
 			"y": 338
@@ -52,7 +52,7 @@
 	{
 		"title": "obelisk_3_end",
 		"tags": "",
-		"body": "Level 3 has ended [[next_level]]",
+		"body": "You must be tired, \n rest your head \n->How long have I been asleep? \n [[next_level]] \n->... ",
 		"position": {
 			"x": 565,
 			"y": 336
@@ -62,7 +62,7 @@
 	{
 		"title": "obelisk_4_start",
 		"tags": "",
-		"body": "Welcome to level 4",
+		"body": "Sleep now, \n You have served me well \n->Who are you? \n [[next_level]]\n->No. ",
 		"position": {
 			"x": 792,
 			"y": 103
@@ -82,7 +82,7 @@
 	{
 		"title": "obelisk_4_end",
 		"tags": "",
-		"body": "Level 4 has ended [[next_level]]",
+		"body": "Sleep now, \n You have served me well \n->Who are you? \n [[next_level]]\n->No. ",
 		"position": {
 			"x": 794,
 			"y": 337
@@ -92,7 +92,7 @@
 	{
 		"title": "obelisk_5_end",
 		"tags": "",
-		"body": "Level 5 has ended [[next_level]]",
+		"body": "Well done my child, \n let us enter the eternal slumber \n->Ok... \n [[next_level]]\n->NO! ",
 		"position": {
 			"x": 1043,
 			"y": 335
@@ -122,7 +122,7 @@
 	{
 		"title": "start",
 		"tags": "",
-		"body": "In the begining [[next_level]]",
+		"body": "Awaken my child \n Danger approaches [[next_level]]",
 		"position": {
 			"x": 208,
 			"y": 917
