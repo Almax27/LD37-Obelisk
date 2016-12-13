@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour {
                 }
                 else if(command.text == "restart")
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    Reset();
                 }
             };
             obeliskDialogueUI.onStarted = () =>
@@ -167,12 +167,29 @@ public class GameManager : MonoBehaviour {
     {
         
     }
+
+    private void Reset()
+    {
+        theVoid.EnterTheVoid(() =>
+        {
+            if (levelInstance)
+            {
+                Destroy(levelInstance.gameObject);
+                levelInstance = null;
+            }
+            SpawnPlayer();
+
+            levelIndex = -1;
+            gameState = GameState.None;
+        });
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
         if(gameState == GameState.None)
         {
+            credits.SetActive(true);
             if (Input.GetButtonDown("Fire1"))
             {
                 credits.SetActive(false);

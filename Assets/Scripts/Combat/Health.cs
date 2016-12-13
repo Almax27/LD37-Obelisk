@@ -15,6 +15,7 @@ public class Health : MonoBehaviour {
     public float deathKnockbackScale = 5.0f;
 
     [Header("SpawnOnEvent")]
+    public GameObject[] spawnOnStart = new GameObject[0];
     public GameObject[] spawnOnDamage = new GameObject[0];
     public GameObject[] spawnOnDeath = new GameObject[0];
 
@@ -38,6 +39,7 @@ public class Health : MonoBehaviour {
     public void Start()
     {
         Reset();
+        ProcessSpawns(spawnOnStart);
     }
 
     public void FixedUpdate()

@@ -78,6 +78,7 @@ public class TheVoid : MonoBehaviour {
         if (darkness)
         {
             Color color = darkness.color;
+
             if (state == State.FadingIn)
             {
                 if (darknessEaseIn.Update(Time.deltaTime, 0, 1, out color.a) == false)
@@ -85,6 +86,17 @@ public class TheVoid : MonoBehaviour {
                     state = State.Active;
                     if (onActiveCallback != null) onActiveCallback();
                 }
+                var player = FindObjectOfType<PlayerController>();
+                if (player)
+                {
+                    var health = player.GetComponent<Health>();
+                    health.current = Mathf.Max(health.current, health.max * color.a);
+                }
+            }
+            else if(state == State.Active)
+            {
+                MoveToLayer(FindObjectOfType<PlayerController>(), "Void");
+                MoveToLayer(FindObjectOfType<Obelisk>(), "Void");
             }
             else if (state == State.FadingOut)
             {
