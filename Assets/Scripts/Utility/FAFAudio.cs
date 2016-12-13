@@ -11,6 +11,7 @@ public class FAFAudio : MonoBehaviour
             {
                 GameObject gobj = new GameObject("FAFAudio");
                 instance = gobj.AddComponent<FAFAudio>();
+                DontDestroyOnLoad(gobj);
             }
             return instance; 
         } 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour {
     BaseLevel levelInstance = null;
 
     [Header("References")]
+    public Obelisk obelisk = null;
     public TheVoid theVoid = null;
 
     [Header("UI")]
@@ -33,9 +35,9 @@ public class GameManager : MonoBehaviour {
 
     void TransitionToLevel(int _levelIndex)
     {
-        if (levelIndex < 0)
+        if (_levelIndex == 0)
         {
-            LoadLevel(_levelIndex);
+            ShowDialogue("start", 0);
         }
         else
         {
@@ -128,6 +130,10 @@ public class GameManager : MonoBehaviour {
                 {
                     LoadLevel(nextLevel);
                 }
+                else if(command.text == "restart")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             };
             obeliskDialogueUI.onStarted = () =>
             {
@@ -147,11 +153,15 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Awake()
+    {
+        SpawnPlayer();
+    }
+
     // Use this for initialization
     void Start ()
     {
         TransitionToLevel(0);
-        SpawnPlayer();
     }
 	
 	// Update is called once per frame
@@ -160,6 +170,26 @@ public class GameManager : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.N))
         {
             TransitionToLevel(levelIndex + 1);
+        }
+        if(obelisk)
+        {
+            if(playerInstance)
+            {
+                var health = playerInstance.GetComponent<Health>();
+                if (health)
+                {
+                    obelisk.SetHealth((int)health.current);
+                }
+            }
+            else
+            {
+                //player died
+                if(gameState != GameState.Calm)
+                {
+                    SetGameState(GameState.Calm);
+                    ShowDialogue("death", 0);
+                }
+            }
         }
     }
 }
