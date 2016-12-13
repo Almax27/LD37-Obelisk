@@ -132,7 +132,14 @@ public class GameManager : MonoBehaviour {
             {
                 if(command.text == "nextlevel")
                 {
-                    LoadLevel(nextLevel);
+                    if (nextLevel >= levels.Count)
+                    {
+                        Reset();
+                    }
+                    else
+                    {
+                        LoadLevel(nextLevel);
+                    }
                 }
                 else if(command.text == "restart")
                 {

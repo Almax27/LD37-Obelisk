@@ -1,18 +1,8 @@
 [
 	{
-		"title": "obelisk_1_start",
-		"tags": "",
-		"body": "Welcome to Level 1",
-		"position": {
-			"x": 92,
-			"y": 113
-		},
-		"colorID": 0
-	},
-	{
 		"title": "obelisk_1_end",
 		"tags": "",
-		"body": "Rest now. \n You will need your strength \n->I guess... \n    [[next_level]] \n->Wait!",
+		"body": "Rest now.\nAs ages come and go\nYou will need your strength \n->I will rest \n    [[next_level]] \n->I'm not tired",
 		"position": {
 			"x": 93,
 			"y": 326
@@ -22,37 +12,17 @@
 	{
 		"title": "obelisk_2_end",
 		"tags": "",
-		"body": "Sleep my child. \n Sleep for a long time \n->Long time? \n [[next_level]]\n->Wait!",
+		"body": "It is safe now, sleep.\nSleep for ten thousand dawns\n->What is this place?\n    A space between places\n    A time between time\n    Not what but why...\n    ->Why?\n        Sleep. [[next_level]]\n->I'm afraid \n    Nothing can harm you while we're together\n    Close your eyes and be at peace\n    ->Close eyes\n        [[next_level]]",
 		"position": {
-			"x": 333,
-			"y": 338
-		},
-		"colorID": 0
-	},
-	{
-		"title": "obelisk_2_start",
-		"tags": "",
-		"body": "Welcome to level 2",
-		"position": {
-			"x": 331,
-			"y": 109
-		},
-		"colorID": 0
-	},
-	{
-		"title": "obelisk_3_start",
-		"tags": "",
-		"body": "Welcome to level 3",
-		"position": {
-			"x": 563,
-			"y": 107
+			"x": 328,
+			"y": 340
 		},
 		"colorID": 0
 	},
 	{
 		"title": "obelisk_3_end",
 		"tags": "",
-		"body": "You must be tired, \n rest your head \n->How long have I been asleep? \n [[next_level]] \n->... ",
+		"body": "You grow weary\nI feel it\nWake up\n->How long have I been asleep? \n    Too long! [[next_level]] \n->...",
 		"position": {
 			"x": 565,
 			"y": 336
@@ -60,29 +30,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "obelisk_4_start",
-		"tags": "",
-		"body": "Sleep now, \n You have served me well \n->Who are you? \n [[next_level]]\n->No. ",
-		"position": {
-			"x": 792,
-			"y": 103
-		},
-		"colorID": 0
-	},
-	{
-		"title": "obelisk_5_start",
-		"tags": "",
-		"body": "Welcome to level 5",
-		"position": {
-			"x": 1028,
-			"y": 103
-		},
-		"colorID": 0
-	},
-	{
 		"title": "obelisk_4_end",
 		"tags": "",
-		"body": "Sleep now, \n You have served me well \n->Who are you? \n [[next_level]]\n->No. ",
+		"body": "All is lost\nWe are alone\n->Who are you? \n    I am you\n    ->Who am I?\n        One who is chained to this room [[next_level]]\n->...",
 		"position": {
 			"x": 794,
 			"y": 337
@@ -92,9 +42,9 @@
 	{
 		"title": "obelisk_5_end",
 		"tags": "",
-		"body": "Well done my child, \n let us enter the eternal slumber \n->Ok... \n [[next_level]]\n->NO! ",
+		"body": "Maybe now we can sleep\nPeace comes for all of us\nEventually\n->Sleep \n    [[next_level]]\n->Stay In The Void",
 		"position": {
-			"x": 1043,
+			"x": 1041,
 			"y": 335
 		},
 		"colorID": 0
@@ -122,7 +72,7 @@
 	{
 		"title": "start",
 		"tags": "",
-		"body": "Awaken my child \n Danger approaches [[next_level]]",
+		"body": "Awaken my child\nA bitterness disturbs us [[next_level]]",
 		"position": {
 			"x": 208,
 			"y": 917
