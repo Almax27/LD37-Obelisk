@@ -9,12 +9,15 @@ public class Obelisk : MonoBehaviour {
     {
         public GameObject glyph = null;
         public GameObject glow = null;
+        public Transform effectOrigin = null;
     }
 
     public HealthGlyph[] healthGlyphs = new HealthGlyph[3];
 
     public int displayedHealth = -1;
     Animator animator = null;
+
+    public ObeliskHealEffectController healEffect = null;
 
     public void SetHealth(int health)
     {
@@ -24,13 +27,27 @@ public class Obelisk : MonoBehaviour {
             for(int i = 0; i < healthGlyphs.Length; i++)
             {
                 bool show = i+1 <= health;
-                healthGlyphs[i].glyph.SetActive(!show);
-                healthGlyphs[i].glow.SetActive(show);
+                if(healthGlyphs[i].glow.activeSelf != show)
+                {
+                    SpawnHealEffect(i);
+                    healthGlyphs[i].glyph.SetActive(!show);
+                    healthGlyphs[i].glow.SetActive(show);
+                }
+                
             }
             if(health == 0 && animator)
             {
                 animator.SetTrigger("OnDeath");
             }
+        }
+    }
+
+    void SpawnHealEffect(int index)
+    {
+        if(index >= 0 && index < healthGlyphs.Length)
+        {
+            var gobj = Instantiate(healEffect.gameObject, healthGlyphs[index].effectOrigin.position, Quaternion.identity);
+            gobj.transform.parent = this.transform;
         }
     }
 

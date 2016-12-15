@@ -9,6 +9,7 @@ public class Hookshot : MonoBehaviour
 
     public enum State
     {
+        None,
         Idle,
         Extending,
         Retracting
@@ -41,8 +42,14 @@ public class Hookshot : MonoBehaviour
     public Renderer chain = null;
     public Renderer hook = null;
 
+    [Header("Audio")]
+    public AudioClip fireSound = null;
+    public AudioClip hookSound = null;
+    public AudioClip pullSound = null;
+    public AudioClip missSound = null;
+
     [Header("Exposed")]
-    public State state;
+    public State state = State.None;
     public Transform owner;
 
     Hookable.Mode currentMode = Hookable.Mode.None;
@@ -122,12 +129,39 @@ public class Hookshot : MonoBehaviour
 
     void SetState(State newState)
     {
+        if(state == newState)
+        {
+            return;
+        }
+
         state = newState;
         tick = 0;
-        if (state == State.Idle)
+
+        switch(state)
         {
-            target = null;
+            case State.Idle:
+                target = null;
+                break;
+            case State.Extending:
+                FAFAudio.Instance.PlayOnce2D(fireSound, transform.position, 1.0f);
+                break;
+            case State.Retracting:
+                var mode = GetHookMode();
+                if (mode == Hookable.Mode.Hook)
+                {
+                    FAFAudio.Instance.PlayOnce2D(hookSound, transform.position, 1.0f, 0.2f);
+                }
+                else if(mode == Hookable.Mode.Pull)
+                {
+                    FAFAudio.Instance.PlayOnce2D(pullSound, transform.position, 1.0f, 0.2f);
+                }
+                else
+                {
+                    FAFAudio.Instance.PlayOnce2D(missSound, transform.position, 1.0f, 0.2f);
+                }
+                break;
         }
+
         //update visualisation
         if (chain)
         {
@@ -145,6 +179,16 @@ public class Hookshot : MonoBehaviour
         float duration = distanceToTravel / config.speed;
         float t = Easing.Ease(Mathf.Clamp(tick - config.pauseDuration, 0, duration), 0, 1, duration, config.easingMethod);
         return t;
+    }
+
+    Hookable.Mode GetHookMode()
+    {
+        Hookable.Mode mode = currentMode;
+        if (target)
+        {
+            mode = target.mode;
+        }
+        return mode;
     }
 
     private void Update()
@@ -170,11 +214,7 @@ public class Hookshot : MonoBehaviour
             }
             else if (state == State.Retracting)
             {
-                Hookable.Mode mode = currentMode;
-                if(target)
-                {
-                    mode = target.mode;
-                }
+                Hookable.Mode mode = GetHookMode();
 
                 if(mode == Hookable.Mode.Hook)
                 {//pull the owner to target

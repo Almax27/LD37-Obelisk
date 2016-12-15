@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour {
     public Obelisk obelisk = null;
     public TheVoid theVoid = null;
     public GameObject credits = null;
+    public ParticleSystem dustParticles = null;
+
+    [Header("Dust Config")]
+    public float calmDustRate = 0;
+    public float fightingDustRate = 0;
 
     [Header("UI")]
     public Yarn.Unity.DialogueRunner obeliskDialogueRunner = null;
@@ -94,9 +99,19 @@ public class GameManager : MonoBehaviour {
         {
             case GameState.Calm:
                 FAFAudio.Instance.TryPlayMusic(calmMusic);
+                if (dustParticles)
+                {
+                    var emission = dustParticles.emission;
+                    emission.rateOverTime = calmDustRate;
+                }
                 break;
             case GameState.Fighting:
                 FAFAudio.Instance.TryPlayMusic(fightMusic, 0.2f, 0.2f, true);
+                if(dustParticles)
+                {
+                    var emission = dustParticles.emission;
+                    emission.rateOverTime = fightingDustRate;
+                }
                 break;
         }
         gameState = newState;
@@ -212,7 +227,7 @@ public class GameManager : MonoBehaviour {
                 gameState = GameState.Start;
             }
         }
-        if(Input.GetKeyDown(KeyCode.N))
+        if(Input.GetKeyDown(KeyCode.N) && obeliskDialogueRunner && !obeliskDialogueRunner.isDialogueRunning)
         {
             TransitionToLevel(levelIndex + 1);
         }
@@ -233,6 +248,7 @@ public class GameManager : MonoBehaviour {
                 {
                     SetGameState(GameState.Calm);
                     ShowDialogue("death", 0);
+                    obelisk.SetHealth(0);
                 }
             }
         }

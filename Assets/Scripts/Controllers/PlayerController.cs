@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     public Animator bodyAnimator = null;
     public BoxCollider2D attackArea = null;
     public LayerMask attackMask = new LayerMask();
+    public AudioClip attackSound = null;
 
     bool isMoving;
     int directionIndex = 0;
@@ -59,8 +60,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         //HACK
         if (hookshot)
@@ -225,6 +225,7 @@ public class PlayerController : MonoBehaviour {
             {
                 isAttacking = true;
                 attackPending = false;
+                OnAttack();
             }
             else
             {
@@ -246,6 +247,7 @@ public class PlayerController : MonoBehaviour {
             {
                 bodyAnimator.SetTrigger("OnAttack");
             }
+            OnAttack();
             return true;
         }
         return false;
@@ -278,5 +280,10 @@ public class PlayerController : MonoBehaviour {
     private void OnDamage(DamagePacket packet)
     {
         CancelAttack();
+    }
+
+    private void OnAttack()
+    {
+        FAFAudio.Instance.PlayOnce2D(attackSound, transform.position, 1.0f, 0.2f);
     }
 }
