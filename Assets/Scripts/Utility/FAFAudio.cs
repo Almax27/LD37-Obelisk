@@ -24,7 +24,7 @@ public class FAFAudio : MonoBehaviour
     float fadeOut = 1;
     bool crossfade = false;
 
-    public void PlayOnce2D(AudioClip _clip, Vector3 _pos, float _volume)
+    public void PlayOnce2D(AudioClip _clip, Vector3 _pos, float _volume = 1, float _pitchVariation = 0)
     {
         if (_clip)
         {
@@ -36,6 +36,7 @@ public class FAFAudio : MonoBehaviour
 
             source.clip = _clip;
             source.volume = _volume;
+            source.pitch = source.pitch + Random.Range(-_pitchVariation, _pitchVariation);
             source.Play();
 
             autoDestruct.delay = _clip.length;
