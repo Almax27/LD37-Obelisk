@@ -19,6 +19,7 @@ public class SpikeEnemyController : MonoBehaviour {
     public MinMax attackDuration = new MinMax();
     public LayerMask attackMask = new LayerMask();
     public float moveSpeed = 0;
+    public float stunTimeOnHit = 0;
 
     [Header("References")]
     public Animator bodyAnimator = null;
@@ -35,6 +36,7 @@ public class SpikeEnemyController : MonoBehaviour {
     Vector2 moveVelocity = Vector2.zero;
 
     int directionIndex = 0;
+    float stunOnHitTick = float.MaxValue;
 
     int DirectionToIndex(Vector2 direction)
     {
@@ -73,6 +75,12 @@ public class SpikeEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(stunOnHitTick < stunTimeOnHit)
+        {
+            stunOnHitTick += Time.deltaTime;
+            return;
+        }
+
         attackTick += Time.deltaTime;
         if (isAttacking)
         {
@@ -173,6 +181,7 @@ public class SpikeEnemyController : MonoBehaviour {
     void OnDamage(DamagePacket packet)
     {
         StopAtacking();
+        stunOnHitTick = 0;
     }
 
     void OnSpawn(Transform spawnPoint)
