@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool lockInput = false;
     public float moveSpeed = 0;
+    public float attackDashSpeed = 0;
     public MoveAttackMode moveAttackMode = MoveAttackMode.MoveAfterHit;
     public Weapon weapon = null;
     public Hookshot hookshot = null;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip attackSound = null;
 
     bool isMoving;
+    Vector2 currentFacing = Vector2.zero;
     int directionIndex = 0;
     int hookshotDirectionIndex = 0;
     int attackDirectionIndex = 0;
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     bool isAttacking = false;
     bool hasAttackHit = false;
     bool attackPending = false;
+    List<GameObject> attackHitCache = new List<GameObject>();
 
     int DirectionToIndex(Vector2 direction)
     {
@@ -80,16 +83,22 @@ public class PlayerController : MonoBehaviour {
             lockInput = true;
         }
 
+        if(lockInput)
+        {
+            CancelAttack();
+        }
+
         //------------------------------------------------
         //FACING
-        Vector3 facing = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        if (facing.x != 0 || facing.y != 0)
+        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (moveInput.x != 0 || moveInput.y != 0)
         {
-            if (facing.magnitude > 1)
+            if (moveInput.magnitude > 1)
             {
-                facing.Normalize();
+                moveInput.Normalize();
             }
-            directionIndex = DirectionToIndex(facing);
+            directionIndex = DirectionToIndex(moveInput);
+            currentFacing = moveInput.normalized;
         }
 
         //------------------------------------------------
@@ -132,6 +141,33 @@ public class PlayerController : MonoBehaviour {
         {
             StartAttack();
         }
+        if (!lockInput && isAttacking && !hasAttackHit)
+        {
+            //apply damage
+            if (attackArea)
+            {
+                Vector2 size = attackArea.transform.lossyScale;
+                size.Scale(attackArea.size);
+                Vector2 origin = attackArea.transform.position;
+                origin -= size * 0.5f;
+                Collider2D[] colliders = Physics2D.OverlapAreaAll(origin, origin + size, attackMask);
+                foreach (var col in colliders)
+                {
+                    DealDamage(col.gameObject);
+                }
+            }
+
+            //apply attack dash
+            if (!isUsingHookshot)
+            {
+                var body = GetComponent<Rigidbody2D>();
+                if (body)
+                {
+                    var deltaPos = new Vector2(currentFacing.x, currentFacing.y) * attackDashSpeed * Time.deltaTime;
+                    body.MovePosition(body.position + deltaPos);
+                }
+            }
+        }
 
         //------------------------------------------------
         //MOVEMENT
@@ -150,9 +186,9 @@ public class PlayerController : MonoBehaviour {
         if (canMove)
         {
             var body = GetComponent<Rigidbody2D>();
-            if (body && (facing.x != 0 || facing.y != 0))
+            if (body && (moveInput.x != 0 || moveInput.y != 0))
             {
-                var deltaPos = new Vector2(facing.x, facing.y) * moveSpeed * Time.deltaTime;
+                var deltaPos = new Vector2(moveInput.x, moveInput.y) * moveSpeed * Time.deltaTime;
                 body.MovePosition(body.position + deltaPos);
 
                 if (!isMoving && !isAttacking)
@@ -203,16 +239,6 @@ public class PlayerController : MonoBehaviour {
 
     private void OnAttackHit()
     {
-        //apply damage
-        Vector2 size = attackArea.transform.lossyScale;
-        size.Scale(attackArea.size);
-        Vector2 origin = attackArea.transform.position;
-        origin -= size * 0.5f;
-        Collider2D[] colliders = Physics2D.OverlapAreaAll(origin, origin + size, attackMask);
-        foreach(var col in colliders)
-        {
-            DealDamage(col.gameObject);
-        }
         hasAttackHit = true;
     }
 
@@ -233,6 +259,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
         hasAttackHit = false;
+        attackHitCache.Clear();
     }
 
     private bool StartAttack()
@@ -262,8 +289,10 @@ public class PlayerController : MonoBehaviour {
 
     private void DealDamage(GameObject obj)
     {
-        if (obj)
+        if (obj && !attackHitCache.Contains(obj))
         {
+            attackHitCache.Add(obj);
+
             DamagePacket packet = new DamagePacket();
             packet.value = 1;
             packet.direction = obj.transform.position - transform.position;
