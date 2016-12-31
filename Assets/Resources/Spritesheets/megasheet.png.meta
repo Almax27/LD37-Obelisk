@@ -1,0 +1,1596 @@
+fileFormatVersion: 2
+guid: 9004091c56dd47e408d24f893845f66b
+timeCreated: 1482768429
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprites-characters-enemies-Lvl1_Idle-Idle_Front_01
+    21300002: sprites-characters-enemies-Lvl1_Idle-Idle_Front_02
+    21300004: sprites-characters-enemies-Lvl1_Idle-Idle_Left_01
+    21300006: sprites-characters-enemies-Lvl1_Idle-Idle_Left_02
+    21300008: sprites-characters-enemies-Lvl1_Idle-Idle_Rear_01
+    21300010: sprites-characters-enemies-Lvl1_Idle-Idle_Rear_02
+    21300012: sprites-characters-enemies-Lvl1_Idle-Idle_Right_01
+    21300014: sprites-characters-enemies-Lvl1_Idle-Idle_Right_02
+    21300016: sprites-characters-enemies-Lvl1_Idle-Lvl1_Idle_Death_01
+    21300018: sprites-characters-enemies-Lvl1_Idle-Lvl1_Idle_Death_02
+    21300020: sprites-characters-enemies-Lvl1_Shield-Shield_Front_01
+    21300022: sprites-characters-enemies-Lvl1_Shield-Shield_Front_02
+    21300024: sprites-characters-enemies-Lvl1_Shield-Shield_Left_01
+    21300026: sprites-characters-enemies-Lvl1_Shield-Shield_Left_02
+    21300028: sprites-characters-enemies-Lvl1_Shield-Shield_Rear_01
+    21300030: sprites-characters-enemies-Lvl1_Shield-Shield_Rear_02
+    21300032: sprites-characters-enemies-Lvl1_Shield-Shield_Right_01
+    21300034: sprites-characters-enemies-Lvl1_Shield-Shield_Right_02
+    21300036: sprites-characters-enemies-Lvl1_Spike-Spike_Front_01
+    21300038: sprites-characters-enemies-Lvl1_Spike-Spike_Front_02
+    21300040: sprites-characters-enemies-Lvl1_Spike-Spike_Left_01
+    21300042: sprites-characters-enemies-Lvl1_Spike-Spike_Left_02
+    21300044: sprites-characters-enemies-Lvl1_Spike-Spike_Rear_01
+    21300046: sprites-characters-enemies-Lvl1_Spike-Spike_Rear_02
+    21300048: sprites-characters-enemies-Lvl1_Spike-Spike_Right_01
+    21300050: sprites-characters-enemies-Lvl1_Spike-Spike_Right_02
+    21300052: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Front
+    21300054: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Left
+    21300056: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Rear
+    21300058: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Right
+    21300060: sprites-characters-player-Player_Front_01
+    21300062: sprites-characters-player-Player_FrontHook_01
+    21300064: sprites-characters-player-Player_FrontHook_02
+    21300066: sprites-characters-player-Player_Left_01
+    21300068: sprites-characters-player-Player_Left_Hook_01
+    21300070: sprites-characters-player-Player_Left_Hook_02
+    21300072: sprites-characters-player-Player_Rear_01
+    21300074: sprites-characters-player-Player_Rear_Hook_01
+    21300076: sprites-characters-player-Player_Rear_Hook_02
+    21300078: sprites-characters-player-Player_Right_01
+    21300080: sprites-characters-player-Player_Right_Hook_01
+    21300082: sprites-characters-player-Player_Right_Hook_02
+    21300084: sprites-characters-player-PlayerAttack_Front_01
+    21300086: sprites-characters-player-PlayerAttack_Front_02
+    21300088: sprites-characters-player-PlayerAttack_Front_03
+    21300090: sprites-characters-player-PlayerAttack_Front_04
+    21300092: sprites-characters-player-PlayerAttack_Front_05
+    21300094: sprites-characters-player-PlayerAttack_Front_06
+    21300096: sprites-characters-player-PlayerAttack_Left_01
+    21300098: sprites-characters-player-PlayerAttack_Left_02
+    21300100: sprites-characters-player-PlayerAttack_Left_03
+    21300102: sprites-characters-player-PlayerAttack_Left_04
+    21300104: sprites-characters-player-PlayerAttack_Left_05
+    21300106: sprites-characters-player-PlayerAttack_Left_06
+    21300108: sprites-characters-player-PlayerAttack_Rear_01
+    21300110: sprites-characters-player-PlayerAttack_Rear_02
+    21300112: sprites-characters-player-PlayerAttack_Rear_03
+    21300114: sprites-characters-player-PlayerAttack_Rear_04
+    21300116: sprites-characters-player-PlayerAttack_Rear_05
+    21300118: sprites-characters-player-PlayerAttack_Rear_06
+    21300120: sprites-characters-player-PlayerAttack_Right_01
+    21300122: sprites-characters-player-PlayerAttack_Right_02
+    21300124: sprites-characters-player-PlayerAttack_Right_03
+    21300126: sprites-characters-player-PlayerAttack_Right_04
+    21300128: sprites-characters-player-PlayerAttack_Right_05
+    21300130: sprites-characters-player-PlayerAttack_Right_06
+    21300132: sprites-characters-player-PlayerWalk_Front_01
+    21300134: sprites-characters-player-PlayerWalk_Front_02
+    21300136: sprites-characters-player-PlayerWalk_Front_03
+    21300138: sprites-characters-player-PlayerWalk_Front_04
+    21300140: sprites-characters-player-PlayerWalk_Left_01
+    21300142: sprites-characters-player-PlayerWalk_Left_02
+    21300144: sprites-characters-player-PlayerWalk_Left_03
+    21300146: sprites-characters-player-PlayerWalk_Left_04
+    21300148: sprites-characters-player-PlayerWalk_Rear_01
+    21300150: sprites-characters-player-PlayerWalk_Rear_02
+    21300152: sprites-characters-player-PlayerWalk_Rear_03
+    21300154: sprites-characters-player-PlayerWalk_Rear_04
+    21300156: sprites-characters-player-PlayerWalk_Right_01
+    21300158: sprites-characters-player-PlayerWalk_Right_02
+    21300160: sprites-characters-player-PlayerWalk_Right_03
+    21300162: sprites-characters-player-PlayerWalk_Right_04
+    21300164: sprites-characters-vfx-DropShadow_01
+    21300166: sprites-levels-Lvl_1
+    21300168: sprites-levels-Lvl_2
+    21300170: sprites-levels-Lvl_3
+    21300172: sprites-levels-Lvl_4
+    21300174: sprites-levels-Lvl_4_Lava_Glow
+    21300176: sprites-levels-Lvl_5
+    21300178: sprites-levels-Lvl_5_Lava_01
+    21300180: sprites-levels-Lvl_5_Lava_02
+    21300182: sprites-levels-Lvl_5_Lava_03
+    21300184: sprites-levels-Lvl_5_Lava_04
+    21300186: sprites-levels-Lvl_5_Lava_Glow
+    21300188: sprites-light
+    21300190: sprites-light_lvl4
+    21300192: sprites-light_lvl5
+    21300194: sprites-props-Obelisk_01_Base
+    21300196: sprites-props-Obelisk_01_Glyph_01
+    21300198: sprites-props-Obelisk_01_Glyph_02
+    21300200: sprites-props-Obelisk_01_Glyph_03
+    21300202: sprites-props-Obelisk_01_GlyphGlow_01
+    21300204: sprites-props-Obelisk_01_GlyphGlow_02
+    21300206: sprites-props-Obelisk_01_GlyphGlow_03
+    21300208: sprites-weapons-chain
+    21300210: sprites-weapons-hook
+    21300212: sprites-weapons-hook_Closed
+    21300214: sprites-white
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Front_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1878
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Front_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1859
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Left_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1840
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Left_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1821
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1802
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Rear_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1783
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Right_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1764
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Idle_Right_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1745
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Lvl1_Idle_Death_01
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 914
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Idle-Lvl1_Idle_Death_02
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 914
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Front_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2030
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Front_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2011
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Left_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1992
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Left_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1973
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1954
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Rear_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1935
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Right_01
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1916
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Shield-Shield_Right_02
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1897
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Front_01
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 949
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Front_02
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 924
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Left_01
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 899
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Left_02
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 939
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 939
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Rear_02
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 939
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Right_01
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 939
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-Spike_Right_02
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 914
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Front
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1049
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Left
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1024
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Rear
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 999
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-enemies-Lvl1_Spike-SpikeAttack_Right
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 974
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Front_01
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_FrontHook_01
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_FrontHook_02
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Left_01
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 996
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Left_Hook_01
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Left_Hook_02
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Rear_Hook_01
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Rear_Hook_02
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Right_01
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Right_Hook_01
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-Player_Right_Hook_02
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 964
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_01
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 2010
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_02
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1971
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_03
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1932
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_04
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1893
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_05
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1854
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Front_06
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1815
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_01
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1776
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_02
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1737
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_03
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1698
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_04
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1659
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_05
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1620
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Left_06
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1581
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1542
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_02
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1503
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_03
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1464
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_04
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1425
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_05
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1386
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Rear_06
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1347
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_01
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1308
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_02
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1269
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_03
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1230
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_04
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1191
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_05
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1152
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerAttack_Right_06
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1113
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Front_01
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1074
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Front_02
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Front_03
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Front_04
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Left_01
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Left_02
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Left_03
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Left_04
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Rear_01
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1042
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Rear_02
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1035
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Rear_03
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Rear_04
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1035
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Right_01
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Right_02
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Right_03
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-player-PlayerWalk_Right_04
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1003
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-characters-vfx-DropShadow_01
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 1740
+        width: 7
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1807
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1807
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_3
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1807
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1565
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_4_Lava_Glow
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1565
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1565
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5_Lava_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1323
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5_Lava_02
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1323
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5_Lava_03
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1323
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5_Lava_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1081
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-levels-Lvl_5_Lava_Glow
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1081
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-light
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1081
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-light_lvl4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 839
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-light_lvl5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 839
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_Base
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 913
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_Glyph_01
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_Glyph_02
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_Glyph_03
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_GlyphGlow_01
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_GlyphGlow_02
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-props-Obelisk_01_GlyphGlow_03
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 881
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-weapons-chain
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1719
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-weapons-hook
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1735
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-weapons-hook_Closed
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1725
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites-white
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 2046
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

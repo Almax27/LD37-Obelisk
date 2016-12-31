@@ -1,0 +1,123 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:cc906e39e07ecbe857f61bed7646fbd6:5fc2d733eecb8311a7832d8cc584b63b:ff153acf17f3558b0f57a44d217a6280$
+#
+:format=40300
+:texture=megasheet.png
+:size=1024x2048
+:normalmap=megasheet_n.png
+:pivotpoints=enabled
+:borders=disabled
+
+sprites/characters/enemies/Lvl1_Idle/Idle_Front_01;1006;1878;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Front_02;1006;1859;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Left_01;1006;1840;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Left_02;1006;1821;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Rear_01;1006;1802;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Rear_02;1006;1783;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Right_01;1006;1764;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Idle_Right_02;1006;1745;11;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Lvl1_Idle_Death_01;880;914;19;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Idle/Lvl1_Idle_Death_02;901;914;19;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Front_01;1006;2030;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Front_02;1006;2011;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Left_01;1006;1992;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Left_02;1006;1973;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Rear_01;1006;1954;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Rear_02;1006;1935;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Right_01;1006;1916;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Shield/Shield_Right_02;1006;1897;14;17; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Front_01;992;949;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Front_02;992;924;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Left_01;992;899;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Left_02;855;939;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Rear_01;880;939;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Rear_02;905;939;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Right_01;930;939;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/Spike_Right_02;855;914;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/SpikeAttack_Front;996;1049;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/SpikeAttack_Left;996;1024;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/SpikeAttack_Rear;996;999;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/enemies/Lvl1_Spike/SpikeAttack_Right;996;974;23;23; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Front_01;918;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_FrontHook_01;840;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_FrontHook_02;879;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Left_01;957;996;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Left_Hook_01;645;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Left_Hook_02;684;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Rear_01;723;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Rear_Hook_01;762;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Rear_Hook_02;801;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Right_01;840;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Right_Hook_01;879;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/Player_Right_Hook_02;918;964;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_01;967;2010;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_02;967;1971;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_03;967;1932;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_04;967;1893;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_05;967;1854;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Front_06;967;1815;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_01;967;1776;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_02;967;1737;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_03;967;1698;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_04;967;1659;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_05;967;1620;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Left_06;967;1581;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_01;967;1542;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_02;967;1503;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_03;967;1464;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_04;967;1425;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_05;967;1386;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Rear_06;967;1347;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_01;967;1308;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_02;967;1269;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_03;967;1230;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_04;967;1191;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_05;967;1152;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerAttack_Right_06;967;1113;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Front_01;967;1074;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Front_02;645;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Front_03;684;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Front_04;723;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Left_01;762;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Left_02;801;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Left_03;840;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Left_04;879;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Rear_01;918;1042;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Rear_02;957;1035;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Rear_03;645;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Rear_04;957;1035;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Right_01;684;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Right_02;723;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Right_03;762;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/player/PlayerWalk_Right_04;801;1003;37;37; 0.5;0.5; 0;0;0;0
+sprites/characters/vfx/DropShadow_01;1016;1740;7;3; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_1;1;1807;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_2;323;1807;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_3;645;1807;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_4;1;1565;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_4_Lava_Glow;323;1565;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5;645;1565;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5_Lava_01;1;1323;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5_Lava_02;323;1323;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5_Lava_03;645;1323;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5_Lava_04;1;1081;320;240; 0.5;0.5; 0;0;0;0
+sprites/levels/Lvl_5_Lava_Glow;323;1081;320;240; 0.5;0.5; 0;0;0;0
+sprites/light;645;1081;320;240; 0.5;0.5; 0;0;0;0
+sprites/light_lvl4;1;839;320;240; 0.5;0.5; 0;0;0;0
+sprites/light_lvl5;323;839;320;240; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_Base;957;913;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_Glyph_01;750;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_Glyph_02;785;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_Glyph_03;820;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_GlyphGlow_01;645;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_GlyphGlow_02;680;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/props/Obelisk_01_GlyphGlow_03;715;881;33;81; 0.5;0.5; 0;0;0;0
+sprites/weapons/chain;1006;1719;8;4; 0.5;0.5; 0;0;0;0
+sprites/weapons/hook;1006;1735;8;8; 0.5;0.5; 0;0;0;0
+sprites/weapons/hook_Closed;1006;1725;8;8; 0.5;0.5; 0;0;0;0
+sprites/white;1022;2046;1;1; 0.5;0.5; 0;0;0;0
